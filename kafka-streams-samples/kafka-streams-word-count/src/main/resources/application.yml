@@ -22,6 +22,12 @@ spring.cloud.stream:
 #Enable metrics
 management:
   metrics:
+    tags:
+      application.guid: ${spring.cloud.application.guid:unknown}
+      application.name: ${spring.cloud.dataflow.stream.app.label:unknown}
+      application.type: ${spring.cloud.dataflow.stream.app.type:unknown}
+      instance.index: ${spring.cloud.stream.instanceIndex:0}
+      stream.name: ${spring.cloud.dataflow.stream.name:unknown}
     export:
       wavefront:
         enabled: false
